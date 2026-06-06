@@ -57,7 +57,6 @@ Primary test cases:
 - `multi-view-topic.md`
 - `uncertain-topic.md`
 
-
 ### `technical-writer`
 
 Purpose:
@@ -80,6 +79,40 @@ Primary test cases:
 - `readme-case.md`
 - `api-doc-case.md`
 - `incomplete-source-case.md`
+
+### `openhands-change-validation`
+
+Purpose:
+- project-specific validation routing for work in the `OpenHands` repository
+
+Use when:
+- a change in `OpenHands` needs the correct backend/frontend/extension/enterprise validation path
+- the agent needs to decide which checks are actually required before push
+
+Skill files:
+- [SKILL.md](./.agents/skills/openhands-change-validation/SKILL.md)
+- [change-validation-checklist.md](./.agents/skills/openhands-change-validation/references/change-validation-checklist.md)
+
+Notes:
+- this is a project-specific example skill derived from the `OpenHands` repository
+- it demonstrates how a framework repo can carry reusable examples of repo-aware validation logic
+
+### `openhands-pr-artifact-handoff`
+
+Purpose:
+- project-specific `.pr/` artifact guidance for work in the `OpenHands` repository
+
+Use when:
+- a PR in `OpenHands` needs temporary reviewer-facing artifacts such as logs, design notes, or investigation docs
+- the agent needs to decide whether a file belongs in `.pr/` or in the permanent repo tree
+
+Skill files:
+- [SKILL.md](./.agents/skills/openhands-pr-artifact-handoff/SKILL.md)
+- [pr-artifact-checklist.md](./.agents/skills/openhands-pr-artifact-handoff/references/pr-artifact-checklist.md)
+
+Notes:
+- this is a project-specific example skill derived from the `OpenHands` repository
+- it demonstrates how to encode PR-only reviewer workflows in a portable skill pack
 
 ### `skill-starter-template`
 
@@ -123,4 +156,6 @@ Every production skill in this repo should ideally have:
 - `code-reviewer`: production-ready example with semi-automated tests
 - `deep-research`: production-ready example with semi-automated tests
 - `technical-writer`: production-ready example with semi-automated tests
+- `openhands-change-validation`: project-specific example for OpenHands
+- `openhands-pr-artifact-handoff`: project-specific example for OpenHands
 - `skill-starter-template`: scaffold only, not a production skill
