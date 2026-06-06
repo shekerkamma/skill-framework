@@ -1,0 +1,26 @@
+diff --git a/app/math_utils.py b/app/math_utils.py
+index 1111111..2222222 100644
+--- a/app/math_utils.py
++++ b/app/math_utils.py
+@@ -1,5 +1,8 @@
+ def clamp(value: int, lower: int, upper: int) -> int:
+-    return max(lower, min(value, upper))
++    if lower > upper:
++        raise ValueError("lower must be <= upper")
++
++    return max(lower, min(value, upper))
+ 
+diff --git a/tests/test_math_utils.py b/tests/test_math_utils.py
+index 3333333..4444444 100644
+--- a/tests/test_math_utils.py
++++ b/tests/test_math_utils.py
+@@ -1,3 +1,8 @@
+ def test_clamp_inside_range():
+     assert clamp(5, 1, 10) == 5
+
++def test_clamp_rejects_inverted_bounds():
++    try:
++        clamp(5, 10, 1)
++        assert False
++    except ValueError:
++        assert True
