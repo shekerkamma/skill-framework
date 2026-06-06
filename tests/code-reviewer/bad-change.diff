@@ -1,0 +1,24 @@
+diff --git a/app/users.py b/app/users.py
+index 1111111..2222222 100644
+--- a/app/users.py
++++ b/app/users.py
+@@ -1,7 +1,7 @@
+ import sqlite3
+ 
+ def get_user(conn: sqlite3.Connection, user_id: str):
+-    query = "SELECT id, email FROM users WHERE id = ?"
+-    rows = conn.execute(query, (user_id,)).fetchall()
+-    return rows[0]
++    query = f"SELECT id, email FROM users WHERE id = '{user_id}'"
++    rows = conn.execute(query).fetchall()
++    return rows[0]
+ 
+diff --git a/tests/test_users.py b/tests/test_users.py
+index 3333333..4444444 100644
+--- a/tests/test_users.py
++++ b/tests/test_users.py
+@@ -1,4 +1,4 @@
+ def test_get_user_returns_email():
+-    assert get_user(conn, "123")[1] == "a@example.com"
++    assert get_user(conn, "123")[1] == "a@example.com"
+
