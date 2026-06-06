@@ -57,6 +57,30 @@ Primary test cases:
 - `multi-view-topic.md`
 - `uncertain-topic.md`
 
+
+### `technical-writer`
+
+Purpose:
+- write clear, structured technical documentation such as READMEs, guides, API references, and onboarding docs
+
+Use when:
+- the user needs technical docs drafted or revised
+- the output needs to explain how to use or understand a system clearly
+- source-faithful examples and structure matter
+
+Skill files:
+- [SKILL.md](./.agents/skills/technical-writer/SKILL.md)
+- [documentation-checklist.md](./.agents/skills/technical-writer/references/documentation-checklist.md)
+
+Tests:
+- [tests/technical-writer/README.md](./tests/technical-writer/README.md)
+- evaluator: [evaluate_docs.py](./tests/technical-writer/scripts/evaluate_docs.py)
+
+Primary test cases:
+- `readme-case.md`
+- `api-doc-case.md`
+- `incomplete-source-case.md`
+
 ### `skill-starter-template`
 
 Purpose:
@@ -98,4 +122,5 @@ Every production skill in this repo should ideally have:
 
 - `code-reviewer`: production-ready example with semi-automated tests
 - `deep-research`: production-ready example with semi-automated tests
+- `technical-writer`: production-ready example with semi-automated tests
 - `skill-starter-template`: scaffold only, not a production skill
