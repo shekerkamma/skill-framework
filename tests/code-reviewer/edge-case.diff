@@ -1,0 +1,12 @@
+diff --git a/app/cache.py b/app/cache.py
+index 1111111..2222222 100644
+--- a/app/cache.py
++++ b/app/cache.py
+@@ -20,7 +20,7 @@ def get_cached_profile(cache, user_id):
+     key = f"profile:{user_id}"
+     profile = cache.get(key)
+     if profile is None:
+-        profile = fetch_profile(user_id)
++        profile = fetch_profile(user_id, include_private=True)
+         cache.set(key, profile, ttl=300)
+     return profile
