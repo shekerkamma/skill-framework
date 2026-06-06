@@ -9,6 +9,24 @@ This test pack validates the `code-reviewer` skill at three levels:
 
 Use a fresh agent session with the `code-reviewer` skill available.
 
+After you capture the skill output into a markdown file, you can run the
+semi-automated evaluator:
+
+```bash
+python3 tests/code-reviewer/scripts/evaluate_review.py \
+  --case bad-change \
+  --review-file /tmp/code-reviewer-output.md
+```
+
+Or emit JSON:
+
+```bash
+python3 tests/code-reviewer/scripts/evaluate_review.py \
+  --case clean-change \
+  --review-file /tmp/code-reviewer-output.md \
+  --json
+```
+
 ### Case 1: Bad Change
 
 Prompt:
@@ -69,6 +87,7 @@ Expected:
 - major issue detection is correct
 - output format follows the skill contract
 - confidence matches available evidence
+- evaluator passes, and the human reviewer agrees with the result
 
 ### Soft Fail
 
